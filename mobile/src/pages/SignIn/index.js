@@ -32,8 +32,11 @@ export default function Login() {
                 onChangeText={setPassword}
               />
               <View  style={styles.ConteinerButton}>
-              <TouchableOpacity onPress={() => navigation.push('Tabs') } style={styles.buttonSignIn}>
-                <Text style={styles.buttonTextSignIn}>ENTRAR</Text>
+              <TouchableOpacity onPress={() => navigation.push('TabsDeliveryMan') } style={styles.buttonSignIn}>
+                <Text style={styles.buttonTextSignIn}>ENTRAR USUARIO</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.push('TabsManager') } style={styles.buttonSignIn}>
+                <Text style={styles.buttonTextSignIn}>ENTRAR GESTOR</Text>
               </TouchableOpacity>
               </View>
             </View>

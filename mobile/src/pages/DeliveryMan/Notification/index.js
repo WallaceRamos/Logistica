@@ -4,7 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, FlatList } from 'react-native';
 
 import styles from './styles';
-import logoImg from '../../assets/logoHader.png';
+import logoImg from '../../../assets/logoHader.png';
 ;
 
 export default function Notification() {

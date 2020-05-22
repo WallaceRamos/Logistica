@@ -4,10 +4,10 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, Alert } from 'react-native';
 
 import styles from './styles';
-import logoImg from '../../assets/logoHader.png';
+import logoImg from '../../../assets/logoHader.png';
 
 
-export default function DatailHome() {
+export default function DatailSolicitation() {
   const navigation = useNavigation();
   const route = useRoute();
  
@@ -16,9 +16,13 @@ export default function DatailHome() {
   function navigateBack() {
     navigation.goBack()
   }
-  function HandleSolicitation(){
-    navigation.navigate('Home');
-    Alert.alert('Solicitação realizada com sucesso');
+  function HandleNegation(){
+    navigation.navigate('SolicitationList');
+    Alert.alert('Solicitação negada com sucesso');
+  }
+  function HandleConfirmation(){
+    navigation.navigate('SolicitationList');
+    Alert.alert('Solicitação confirmada com sucesso');
   }
 
   return (
@@ -35,6 +39,9 @@ export default function DatailHome() {
         <Text style={[styles.incidentProperty, { marginTop: 0 }]}>Endereço de entrega:</Text>
         <Text style={styles.incidentValue}>{delivery.endereco}</Text>
 
+        <Text style={styles.incidentProperty}>Entregador:</Text>
+        <Text style={styles.incidentValue}>{delivery.deliveryman}</Text>
+
         <Text style={styles.incidentProperty}>Produto:</Text>
         <Text style={styles.incidentValue}>{delivery.produto}</Text>
 
@@ -43,12 +50,15 @@ export default function DatailHome() {
       </View>
 
       <View style={styles.contactBox}>
-        <Text style={styles.heroTitle}>Solicitar retirada de produto para entrega.</Text>
+        <Text style={styles.heroTitle}>Confirme ou negue a solicitação.</Text>
 
 
         <View style={styles.actions}>
-          <TouchableOpacity style={styles.action} onPress={() =>HandleSolicitation()}>
-            <Text style={styles.actionText}>Solicitar</Text>
+          <TouchableOpacity style={styles.actionNegar} onPress={() =>HandleNegation()}>
+            <Text style={styles.actionText}>Negar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.action} onPress={() =>HandleConfirmation()}>
+            <Text style={styles.actionText}>Confirmar</Text>
           </TouchableOpacity>
         </View>
       </View>

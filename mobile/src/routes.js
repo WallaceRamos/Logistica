@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
 
 
@@ -11,18 +11,24 @@ const HomeStack = createStackNavigator();
 
 import SignIn from './pages/SignIn';
 
-import Home from './pages/Home';
-import DetailHome from './pages/DetailHome';
+// Paginas para o entregador
+import HomeDeliveryman from './pages/DeliveryMan/Home';
+import DetailHome from './pages/DeliveryMan/DetailHome';
+import Delivery from './pages/DeliveryMan/Delivery';
+import CheckList from './pages/DeliveryMan/CheckList';
+import Notification from './pages/DeliveryMan/Notification';
 
-import Delivery from './pages/Delivery';
-import CheckList from './pages/CheckList';
-
-import Notification from './pages/Notification';
+//Paginas para o gestor
+import SolicitationList from './pages/Manenger/SolicitationList';
+import DetailSolicitation from './pages/Manenger/DetailSolicitation';
+import UsersList from './pages/Manenger/UsersList';
+import OrderList from './pages/Manenger/OrderList';
+import DetailOrder from './pages/Manenger/DetailOrder';
 
 
 
 export default function Routes() {
-  const HomeStackScren = () => (
+  const HomeStackScreen = () => (
     <Tab.Navigator 
     
     initialRouteName="Home"
@@ -31,7 +37,7 @@ export default function Routes() {
       shifting={true}
       barStyle={{ backgroundColor: '#293B83',  paddingBottom: 12 }}
       >
-      <Tab.Screen name="Home" component={Home}
+      <Tab.Screen name="Home" component={HomeDeliveryman}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
@@ -59,14 +65,55 @@ export default function Routes() {
     </Tab.Navigator>
   );
 
+  const ManengerHomeStackScreen = () => (
+    <Tab.Navigator 
+    
+    initialRouteName="SolicitationList"
+      activeColor="#36CA63"
+      inactiveColor="#fff"
+      shifting={true}
+      barStyle={{ backgroundColor: '#293B83',  paddingBottom: 12 }}
+      >
+        <Tab.Screen name="SolicitationList" component={SolicitationList}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen name="UsersList" component={UsersList}
+        options={{
+          tabBarLabel: 'entregadores',
+          tabBarIcon: ({ color }) => (
+            <FontAwesome5 name="users" color={color} size={19} />
+          ),
+        }}
+      />
+      <Tab.Screen name="OrderList" component={OrderList}
+        options={{
+          tabBarLabel: 'encomendas',
+          tabBarIcon: ({ color }) => (
+            <FontAwesome5 name="boxes" color={color} size={22} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
 
   return (
     <NavigationContainer>
       <HomeStack.Navigator screenOptions={{ headerShown: false }}>
         <HomeStack.Screen name="SignIn" component={SignIn} />
-        <HomeStack.Screen name="Tabs" component={HomeStackScren} />
+        <HomeStack.Screen name="TabsDeliveryMan" component={HomeStackScreen} />
+        <HomeStack.Screen name="TabsManager" component={ManengerHomeStackScreen} />
+
         <HomeStack.Screen name="DetailHome" component={DetailHome} />
         <HomeStack.Screen name="CheckList" component={CheckList} />
+
+        <HomeStack.Screen name="DetailSolicitation" component={DetailSolicitation} />
+        <HomeStack.Screen name="DetailOrder" component={DetailOrder} />
+
       </HomeStack.Navigator>
     </NavigationContainer>
   );

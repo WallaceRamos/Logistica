@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import api from '../../services/api';
+import api from '../../../services/api';
 
-import logoImg from '../../assets/logoHader.png';
+import logoImg from '../../../assets/logoHader.png';
 
 import styles from './styles';
 

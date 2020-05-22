@@ -4,33 +4,36 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, Linking, FlatList } from 'react-native';
 
 import styles from './styles';
-import logoImg from '../../assets/logoHader.png';
+import logoImg from '../../../assets/logoHader.png';
 
 
-export default function Home() {
+export default function SolicitationList() {
   const navigation = useNavigation();
   const DATA = [
     {
       id: '1',
-      endereco: 'Rua Alfredo de barros santos, Pedregulho, Guaratinguetá, SP',
+      deliveryman:'John Due',
+      endereco: 'Av. Prof. João Rodrigues, 1501 - Jardim Esperanca, Guaratinguetá - SP',
       produto: ' Estojo infantil / 00W23R',
       periodo: '22/8/2020'
     },
     {
       id: '2',
-      endereco: 'Rua Alfredo de barros santos, Pedregulho, Guaratinguetá, SP',
-      produto: ' Estojo infantil / 00W23R',
+      deliveryman:'Spider Anderson',
+      endereco: 'R. Afonso Giannico, 350 - Pedregulho, Guaratinguetá - SP ',
+      produto: ' Estojo juvenil / 11R34B',
       periodo: '22/10/2020'
     },
     {
       id: '3',
-      endereco: 'Rua Alfredo de barros santos, Pedregulho, Guaratinguetá, SP',
-      produto: ' Estojo infantil / 00W23R',
+      deliveryman:'Gustavo Gay',
+      endereco: 'Av. Juscelino Kubitscheck de Oliveira, 957 - Campo do Galvão, Guaratinguetá - SP',
+      produto: ' Estojo infantil barbie / 69S22W',
       periodo: '22/12/2020'
     },
   ];
   function navigateToDetail(delivery) {
-    navigation.navigate('DetailHome', { delivery });
+    navigation.navigate('DetailSolicitation', { delivery });
   }
 
 
@@ -39,12 +42,12 @@ export default function Home() {
       <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>
-          Total de <Text style={styles.headerTextBold}>11 encomendas.</Text>
+          Bem vindo:<Text style={styles.headerTextBold}>Pedro Viadão</Text>
         </Text>
       </View>
 
-      <Text style={styles.title}>Bem-vindo!</Text>
-      <Text style={styles.description}>Escolha uma das encomendas abaixo para entregar. </Text>
+     
+      <Text style={styles.title}>Confirme as solicitações de retirada das encomendas abaixo. </Text>
 
       <FlatList
         data={DATA}
@@ -52,12 +55,8 @@ export default function Home() {
         keyExtractor={delivery => String(delivery.id)}
         renderItem={({ item: delivery }) => (
           <View style={styles.delivery}>
-            <Text style={styles.deliveryProperty}>Endereço da entrega:</Text>
-            <Text style={styles.deliveryValue}>{delivery.endereco}</Text>
-
-            <Text style={styles.deliveryProperty}>Produto:</Text>
-            <Text style={styles.deliveryValue}>{delivery.produto}</Text>
-
+            <Text style={styles.deliveryProperty}>{delivery.deliveryman} solicitou entrega de produto {delivery.produto}:</Text>
+            
             
 
             <TouchableOpacity
