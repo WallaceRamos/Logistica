@@ -13,7 +13,7 @@ export default function Login() {
     
  
       return (
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <KeyboardAvoidingView  style={styles.container}>
           <ScrollView>
             <View style={styles.logoContainer} >
               <Image source={logo} />

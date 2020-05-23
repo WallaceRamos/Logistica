@@ -21,14 +21,14 @@ export default StyleSheet.create({
     padding: 24,
     borderRadius: 8,
     backgroundColor: '#fff',
-    marginBottom: 16,
+    marginBottom: 26,
     marginTop: 18,
   },
   incidentProperty: {
     fontSize: 14,
     color:'#41414d',
     fontWeight: 'bold',
-    marginTop: 24,
+    marginTop: 10,
     marginBottom: 10,
   },
  
