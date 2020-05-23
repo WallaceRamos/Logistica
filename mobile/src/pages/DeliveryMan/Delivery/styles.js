@@ -49,7 +49,11 @@ export default StyleSheet.create({
     color: '#13131a',
     lineHeight: 30,
   },
- 
+ heroDescription: {
+  marginTop: 8,
+  fontSize: 15,
+  color: '#737380',
+ },
   actions: {
     marginTop: 16,
     alignItems:'flex-end',

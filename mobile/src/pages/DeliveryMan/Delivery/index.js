@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Alert, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import api from '../../../services/api';
@@ -18,7 +18,11 @@ export default function Delivery() {
   }
 
  
-  
+  function handlefinalizar(){
+    Alert.alert('Entrega finalizada com sucesso');
+    navigation.navigate('Home');
+
+  }
 
 
    
@@ -28,9 +32,11 @@ export default function Delivery() {
         <Image source={logoImg} />
         
       </View>
-
+      
       <Text style={styles.title}></Text>
       <Text style={styles.description}>Veja informações da sua entrega pendente.</Text>
+
+      <ScrollView>
 
       <View style={styles.incident}>
         <Text style={[styles.incidentProperty, { marginTop: 0 }]}>Endereço de entrega:</Text>
@@ -53,6 +59,18 @@ export default function Delivery() {
           </TouchableOpacity>
         </View>
       </View>
+
+      <View style={styles.contactBox}>
+        <Text style={styles.heroTitle}>Finalizar entrega</Text>
+        <Text style={styles.heroDescription}>Antes de finalizar faça o CheckList da carga</Text>
+
+        <View style={styles.actions}>
+          <TouchableOpacity style={styles.action} onPress={() => handlefinalizar()}>
+            <Text style={styles.actionText}>Finalizar</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      </ScrollView>
 
     </View>
   );
