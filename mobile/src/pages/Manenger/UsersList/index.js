@@ -13,22 +13,22 @@ export default function UsersList() {
     {
       id: '1',
       deliveryman:'John Due',
-      contact: 'doe.john@mail.com'
+      contact: 'john@mail.com'
     },
     {
       id: '2',
-      deliveryman:'Spider Anderson',
-      contact: 'spider.anderson@mail.com'
+      deliveryman:'Anderson Silva',
+      contact: 'anderson@mail.com'
     },
     {
       id: '3',
-      deliveryman:'Gustavo Gay',
-      contact: 'gay.gustavo@mail.com'
+      deliveryman:'Carlota Reis ',
+      contact: 'carlota@mail.com'
     },
   ];
-  function navigateToDetail(delivery) {
-    navigation.navigate('DetailSolicitation', { delivery });
-  }
+  // function navigateToDetail(delivery) {
+  //   navigation.navigate('DetailSolicitation', { delivery });
+  // }
 
 
   return (
@@ -36,7 +36,7 @@ export default function UsersList() {
       <View style={styles.header}>
         <Image source={logoImg} style={styles.headerLogo}/>
         <Text style={styles.headerText}>
-          Bem vindo:<Text style={styles.headerTextBold}>Pedro Viadão</Text>
+          Bem vindo:<Text style={styles.headerTextBold}>Pedro</Text>
         </Text>
       </View>
 
@@ -45,15 +45,15 @@ export default function UsersList() {
 
       <FlatList
         data={DATA}
-        style={styles.deliveryList}
-        keyExtractor={delivery => String(delivery.id)}
-        renderItem={({ item: delivery }) => (
-          <View style={styles.delivery}>
-            <Text style={styles.deliveryProperty}>Nome do entregador:</Text>
-            <Text style={styles.deliveryValue}>{delivery.deliveryman}</Text>
+        style={styles.userList}
+        keyExtractor={user => String(user.id)}
+        renderItem={({ item: user }) => (
+          <View style={styles.user}>
+            <Text style={styles.userProperty}>Nome do entregador:</Text>
+            <Text style={styles.userValue}>{user.deliveryman}</Text>
 
-            <Text style={styles.deliveryProperty}>Contato:</Text>
-            <Text style={styles.deliveryValue}>{delivery.contact}</Text>
+            <Text style={styles.userProperty}>Contato:</Text>
+            <Text style={styles.userValue}>{user.contact}</Text>
 
           
           </View>

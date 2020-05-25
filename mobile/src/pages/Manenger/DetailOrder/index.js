@@ -11,7 +11,7 @@ export default function DetailOrder() {
   const navigation = useNavigation();
   const route = useRoute();
  
-  const delivery = route.params.delivery;
+  const order = route.params.order;
 
   function navigateBack() {
     navigation.goBack()
@@ -29,13 +29,13 @@ export default function DetailOrder() {
     <ScrollView>
       <View style={styles.incident}>
         <Text style={[styles.incidentProperty, { marginTop: 0 }]}>Endereço de entrega:</Text>
-        <Text style={styles.incidentValue}>{delivery.endereco}</Text>
+        <Text style={styles.incidentValue}>{order.endereco}</Text>
 
         <Text style={styles.incidentProperty}>Entregador:</Text>
-        <Text style={styles.incidentValue}>{delivery.deliveryman}</Text>
+        <Text style={styles.incidentValue}>{order.deliveryman}</Text>
 
         <Text style={styles.incidentProperty}>Produto:</Text>
-        <Text style={styles.incidentValue}>{delivery.produto}</Text>
+        <Text style={styles.incidentValue}>{order.produto}</Text>
 
        
       </View>
@@ -44,16 +44,16 @@ export default function DetailOrder() {
         <Text style={styles.heroTitle}>Check List</Text>
         
         <Text style={[styles.incidentProperty, { marginTop: 0 }]}>Modelo:</Text>
-        <Text style={styles.incidentValue}>{delivery.checklist.model}</Text>
+        <Text style={styles.incidentValue}>{order.checklist.model}</Text>
 
         <Text style={styles.incidentProperty}>Cor:</Text>
-        <Text style={styles.incidentValue}>{delivery.checklist.color}</Text>
+        <Text style={styles.incidentValue}>{order.checklist.color}</Text>
 
         <Text style={styles.incidentProperty}>Quantidade:</Text>
-        <Text style={styles.incidentValue}>{delivery.checklist.Quantidade}</Text>
+        <Text style={styles.incidentValue}>{order.checklist.Quantidade}</Text>
 
         <Text style={styles.incidentProperty}>Data de retirada:</Text>
-  <Text style={styles.incidentValue}>{delivery.checklist.dataretirada}</Text>
+  <Text style={styles.incidentValue}>{order.checklist.dataretirada}</Text>
 
       </View>
       </ScrollView>

@@ -34,22 +34,22 @@ export default StyleSheet.create({
  },
 
 
- deliveryList: {
+ userList: {
   marginTop: 32,
 },
-delivery: {
+user: {
   padding: 24,
   borderRadius: 8,
   backgroundColor: '#fff',
   marginBottom: 16,
  
 },
-deliveryProperty: {
+userProperty: {
   fontSize: 14,
   color:'#41414d',
   fontWeight: 'bold',
 },
-deliveryValue: {
+userValue: {
   marginTop: 8,
   fontSize: 15,
   marginBottom: 24,

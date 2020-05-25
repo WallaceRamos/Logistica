@@ -35,22 +35,22 @@ export default StyleSheet.create({
  },
 
 
- deliveryList: {
+ orderList: {
   marginTop: 32,
 },
-delivery: {
+order: {
   padding: 24,
   borderRadius: 8,
   backgroundColor: '#fff',
   marginBottom: 16,
  
 },
-deliveryProperty: {
+orderProperty: {
   fontSize: 14,
   color:'#41414d',
   fontWeight: 'bold',
 },
-deliveryValue: {
+orderValue: {
   marginTop: 8,
   fontSize: 15,
   marginBottom: 24,

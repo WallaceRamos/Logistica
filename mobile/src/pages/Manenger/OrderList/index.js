@@ -24,7 +24,7 @@ export default function OrderList() {
     },
     {
       id: '2',
-      deliveryman:'Spider Anderson',
+      deliveryman:'Anderson Silva',
       endereco: 'R. Afonso Giannico, 350 - Pedregulho, Guaratinguetá - SP ',
       produto: ' Estojo juvenil / 11R34B',
       checklist:{
@@ -36,7 +36,7 @@ export default function OrderList() {
     },
     {
       id: '3',
-      deliveryman:'Gustavo Gay',
+      deliveryman:'Carlota Reis',
       endereco: 'Av. Juscelino Kubitscheck de Oliveira, 957 - Campo do Galvão, Guaratinguetá - SP',
       produto: ' Estojo infantil barbie / 69S22W',
       checklist:{
@@ -47,8 +47,8 @@ export default function OrderList() {
       },
     },
   ];
-  function navigateToDetail(delivery) {
-    navigation.navigate('DetailOrder', { delivery });
+  function navigateToDetail(order) {
+    navigation.navigate('DetailOrder', { order });
   }
 
 
@@ -59,7 +59,7 @@ export default function OrderList() {
 
         <View >
         <Text style={styles.headerText}>
-          Bem vindo:<Text style={styles.headerTextBold}>Pedro Viadão</Text>
+          Bem vindo:<Text style={styles.headerTextBold}>Pedro </Text>
         </Text>
         <Text style={styles.headerText}>
         Check-List Feitos:<Text style={styles.headerTextBold}>3</Text>
@@ -73,22 +73,22 @@ export default function OrderList() {
 
       <FlatList
         data={DATA}
-        style={styles.deliveryList}
-        keyExtractor={delivery => String(delivery.id)}
-        renderItem={({ item: delivery }) => (
-          <View style={styles.delivery}>
-            <Text style={styles.deliveryProperty}>Endereço da entrega:</Text>
-            <Text style={styles.deliveryValue}>{delivery.endereco}</Text>
+        style={styles.orderList}
+        keyExtractor={order => String(order.id)}
+        renderItem={({ item: order }) => (
+          <View style={styles.order}>
+            <Text style={styles.orderProperty}>Endereço da entrega:</Text>
+            <Text style={styles.orderValue}>{order.endereco}</Text>
 
-            <Text style={styles.deliveryProperty}>Produto:</Text>
-            <Text style={styles.deliveryValue}>{delivery.produto}</Text>
+            <Text style={styles.orderProperty}>Produto:</Text>
+            <Text style={styles.orderValue}>{order.produto}</Text>
 
-            <Text style={styles.deliveryProperty}>Entregador:</Text>
-            <Text style={styles.deliveryValue}>{delivery.deliveryman}</Text>
+            <Text style={styles.orderProperty}>Entregador:</Text>
+            <Text style={styles.orderValue}>{order.deliveryman}</Text>
 
             <TouchableOpacity
               style={styles.detailsButton}
-              onPress={() => navigateToDetail(delivery)}
+              onPress={() => navigateToDetail(order)}
             >
               <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
               <Feather name="arrow-right" size={20} color="#29C759" />

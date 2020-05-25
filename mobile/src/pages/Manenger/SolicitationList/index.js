@@ -19,14 +19,14 @@ export default function SolicitationList() {
     },
     {
       id: '2',
-      deliveryman:'Spider Anderson',
+      deliveryman:'Anderson Silva',
       endereco: 'R. Afonso Giannico, 350 - Pedregulho, Guaratinguetá - SP ',
       produto: ' Estojo juvenil / 11R34B',
       periodo: '22/10/2020'
     },
     {
       id: '3',
-      deliveryman:'Gustavo Gay',
+      deliveryman:'Carlota Reis',
       endereco: 'Av. Juscelino Kubitscheck de Oliveira, 957 - Campo do Galvão, Guaratinguetá - SP',
       produto: ' Estojo infantil barbie / 69S22W',
       periodo: '22/12/2020'
@@ -42,7 +42,7 @@ export default function SolicitationList() {
       <View style={styles.header}>
         <Image source={logoImg} style={styles.headerLogo} />
         <Text style={styles.headerText}>
-          Bem vindo:<Text style={styles.headerTextBold}>Pedro Viadão</Text>
+          Bem vindo:<Text style={styles.headerTextBold}>Pedro</Text>
         </Text>
       </View>
 
