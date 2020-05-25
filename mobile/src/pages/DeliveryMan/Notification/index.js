@@ -4,7 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, FlatList } from 'react-native';
 
 import styles from './styles';
-import logoImg from '../../../assets/logoHader.png';
+import logoImg from '../../../assets/logo.png';
 ;
 
 export default function Notification() {
@@ -32,7 +32,7 @@ function navigateToDetail(){
   return (
     <View style={styles.container} >
       <View style={styles.header}>
-        <Image source={logoImg} />
+        <Image source={logoImg} style={styles.headerLogo}/>
         <Text style={styles.headerText}>
           Total de <Text style={styles.headerTextBold}>2 notificações.</Text>
         </Text>

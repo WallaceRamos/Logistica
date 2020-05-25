@@ -12,6 +12,10 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  headerLogo:{
+    maxWidth: 65,
+    height: 65,
+  },
   description: {
     fontSize: 16,
     lineHeight: 24,

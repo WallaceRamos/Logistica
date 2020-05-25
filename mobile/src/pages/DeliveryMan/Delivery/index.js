@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import api from '../../../services/api';
 
-import logoImg from '../../../assets/logoHader.png';
+import logoImg from '../../../assets/logo.png';
 
 import styles from './styles';
 
@@ -29,7 +29,7 @@ export default function Delivery() {
   return (
     <View style={styles.container} >
       <View style={styles.header}>
-        <Image source={logoImg} />
+        <Image source={logoImg} style={styles.headerLogo} />
         
       </View>
       

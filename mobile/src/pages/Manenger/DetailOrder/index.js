@@ -4,7 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, ScrollView } from 'react-native';
 
 import styles from './styles';
-import logoImg from '../../../assets/logoHader.png';
+import logoImg from '../../../assets/logo.png';
 
 
 export default function DetailOrder() {
@@ -20,7 +20,7 @@ export default function DetailOrder() {
   return (
     <View style={styles.container}>
     <View style={styles.header}>
-      <Image source={logoImg} />
+      <Image source={logoImg} style={styles.headerLogo} />
       <TouchableOpacity onPress={navigateBack}>
         <Feather name="arrow-left" size={28} color="#000" />
       </TouchableOpacity>

@@ -12,8 +12,8 @@ const HomeStack = createStackNavigator();
 import SignIn from './pages/SignIn';
 
 // Paginas para o entregador
-import HomeDeliveryman from './pages/DeliveryMan/Home';
-import DetailHome from './pages/DeliveryMan/DetailHome';
+import HomeDeliveryman from './pages/DeliveryMan/RequestList';
+import DetailHome from './pages/DeliveryMan/DetailRequest';
 import Delivery from './pages/DeliveryMan/Delivery';
 import CheckList from './pages/DeliveryMan/CheckList';
 import Notification from './pages/DeliveryMan/Notification';

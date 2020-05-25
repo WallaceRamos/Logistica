@@ -4,7 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, Linking, FlatList } from 'react-native';
 
 import styles from './styles';
-import logoImg from '../../../assets/logoHader.png';
+import logoImg from '../../../assets/logo.png';
 
 
 export default function UsersList() {
@@ -34,7 +34,7 @@ export default function UsersList() {
   return (
     <View style={styles.container} >
       <View style={styles.header}>
-        <Image source={logoImg} />
+        <Image source={logoImg} style={styles.headerLogo}/>
         <Text style={styles.headerText}>
           Bem vindo:<Text style={styles.headerTextBold}>Pedro Viadão</Text>
         </Text>

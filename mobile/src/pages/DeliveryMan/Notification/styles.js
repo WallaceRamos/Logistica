@@ -13,6 +13,10 @@ export default StyleSheet.create({
     alignItems: 'center',
     marginBottom: 26,
   },
+  headerLogo:{
+    maxWidth: 65,
+    height: 65,
+  },
   headerText: {
     fontSize: 15,
     color: '#737380',
