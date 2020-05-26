@@ -32,7 +32,6 @@ yarn install
 
 No diretório do projeto, você pode executar:
 
-yarn start
 ```bash
 yarn start
 ```
@@ -43,7 +42,7 @@ Após o carregamento abrira uma pagina com um QR code, escaneie o QR code com o 
 ```bash
 yarn build
 ```
-Compila o aplicativo para ser implantado nas lojas de aplicativos ou ao criar o aplicativo para o Android, você pode optar por criar o APK.
+Compila o aplicativo para ser implantado nas lojas de aplicativos ou para Android, você pode optar por criar um arquivo APK.
 
 > Acesse  [Expo/Criando aplicativos independentes](https://docs.expo.io/distribution/building-standalone-apps/) para saber mais.
 
