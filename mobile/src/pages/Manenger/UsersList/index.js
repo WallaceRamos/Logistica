@@ -41,7 +41,7 @@ export default function UsersList() {
       </View>
 
      
-      <Text style={styles.title}>Lista de encomendas em andamento</Text>
+      <Text style={styles.title}>Lista de entregadores cadastrados</Text>
 
       <FlatList
         data={DATA}
