@@ -52,7 +52,7 @@ export default function DetailOrder() {
         <Text style={styles.incidentProperty}>Quantidade:</Text>
         <Text style={styles.incidentValue}>{order.checklist.Quantidade}</Text>
 
-        <Text style={styles.incidentProperty}>Data de retirada:</Text>
+        <Text style={styles.incidentProperty}>Data de entrega:</Text>
   <Text style={styles.incidentValue}>{order.checklist.dataretirada}</Text>
 
       </View>

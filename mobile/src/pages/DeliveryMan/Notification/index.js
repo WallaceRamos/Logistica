@@ -13,16 +13,18 @@ export default function Notification() {
   const DATA = [
     {
       id: '1',
-      mensagem: 'Solicitação de retirada de produto foi confirmada!',
-      descricao: ' Produto estojo infantil /00W25E',
-      button: 'Entregar'
+      endereco: 'Av. Prof. João Rodrigues, 1501 - Jardim Esperanca, Guaratinguetá - SP',
+      produto: ' Estojo infantil / 00W23R',
+      periodo: '22/8/2020',
+      status: '01'
 
     },
     {
       id: '2',
-      mensagem: 'Solicitação de retirada de produto foi negada!',
-      descricao: ' Produto estojo infantil /00W23R',
-      button: 'Ok'
+      endereco: 'Av. Prof. João Rodrigues, 1501 - Jardim Esperanca, Guaratinguetá - SP',
+      produto: ' Estojo infantil / 00W23R',
+      periodo: '22/8/2020',
+      status: '02'
     },
    
   ];
@@ -44,9 +46,9 @@ function navigateToDetail(){
         keyExtractor={notification => String(notification.id)}
         renderItem={({ item: notification }) => (
           <View style={styles.notification}>
-            <Text style={styles.notificationProperty}>{notification.mensagem}</Text>
+            <Text style={styles.notificationProperty}>Solicitação de retirada de produto foi: {notification.status == '01' ?  'COMFIRMADA' : 'NEGADA'}</Text>
 
-            <Text style={styles.notificationValue}>{notification.descricao}</Text>
+            <Text style={styles.notificationValue}>Produto {notification.produto}</Text>
 
             
 
@@ -54,7 +56,7 @@ function navigateToDetail(){
               style={styles.detailsButton}
               onPress={() => navigateToDetail()}
             >
-              <Text style={styles.detailsButtonText}>{notification.button}</Text>
+              <Text style={styles.detailsButtonText}>Ok</Text>
               
             </TouchableOpacity>
           </View>

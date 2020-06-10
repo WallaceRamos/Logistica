@@ -62,14 +62,14 @@ export default function OrderList() {
           Bem vindo:<Text style={styles.headerTextBold}>Pedro </Text>
         </Text>
         <Text style={styles.headerText}>
-        Check-List Feitos:<Text style={styles.headerTextBold}>3</Text>
+        Check-List Feitos:<Text style={styles.headerTextBold}>3 de 3</Text>
         </Text>
         </View>
 
       </View>
 
      
-      <Text style={styles.title}>Lista de encomendas em andamento</Text>
+      <Text style={styles.title}>Lista de encomendas em andamento e finalizadas</Text>
 
       <FlatList
         data={DATA}

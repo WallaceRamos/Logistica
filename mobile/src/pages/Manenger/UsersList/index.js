@@ -13,17 +13,20 @@ export default function UsersList() {
     {
       id: '1',
       deliveryman:'John Due',
-      contact: 'john@mail.com'
+      email: 'john@mail.com',
+      phone: '(12)98280-7070'
     },
     {
       id: '2',
       deliveryman:'Anderson Silva',
-      contact: 'anderson@mail.com'
+      email: 'anderson@mail.com',
+      phone: '(12)99610-10000'
     },
     {
       id: '3',
       deliveryman:'Carlota Reis ',
-      contact: 'carlota@mail.com'
+      email: 'carlota@mail.com',
+      phone: '(12)98105-9090'
     },
   ];
   // function navigateToDetail(delivery) {
@@ -53,7 +56,8 @@ export default function UsersList() {
             <Text style={styles.userValue}>{user.deliveryman}</Text>
 
             <Text style={styles.userProperty}>Contato:</Text>
-            <Text style={styles.userValue}>{user.contact}</Text>
+            <Text style={styles.userValue}>{user.email}</Text>
+            <Text style={styles.userValue}>{user.phone}</Text>
 
           
           </View>

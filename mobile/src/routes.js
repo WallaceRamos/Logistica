@@ -13,8 +13,9 @@ import SignIn from './pages/SignIn';
 
 // Paginas para o entregador
 import HomeDeliveryman from './pages/DeliveryMan/RequestList';
-import DetailHome from './pages/DeliveryMan/DetailRequest';
-import Delivery from './pages/DeliveryMan/Delivery';
+import DetailRequest from './pages/DeliveryMan/DetailRequest';
+import DeliveryList from './pages/DeliveryMan/DeliveryList';
+import DetailDelivery from './pages/DeliveryMan/DetailDelivery';
 import CheckList from './pages/DeliveryMan/CheckList';
 import Notification from './pages/DeliveryMan/Notification';
 
@@ -46,7 +47,7 @@ export default function Routes() {
         }}
       />
      
-      <Tab.Screen name="Delivery" component={Delivery}
+      <Tab.Screen name="Delivery" component={DeliveryList}
         options={{
           tabBarLabel: 'Entregas',
           tabBarIcon: ({ color }) => (
@@ -108,10 +109,12 @@ export default function Routes() {
         <HomeStack.Screen name="TabsDeliveryMan" component={HomeStackScreen} />
         <HomeStack.Screen name="TabsManager" component={ManengerHomeStackScreen} />
 
-        <HomeStack.Screen name="DetailHome" component={DetailHome} />
+        
         <HomeStack.Screen name="CheckList" component={CheckList} />
 
+        <HomeStack.Screen name="DetailRequest" component={DetailRequest} />
         <HomeStack.Screen name="DetailSolicitation" component={DetailSolicitation} />
+        <HomeStack.Screen name="DetailDelivery" component={DetailDelivery} />
         <HomeStack.Screen name="DetailOrder" component={DetailOrder} />
 
       </HomeStack.Navigator>

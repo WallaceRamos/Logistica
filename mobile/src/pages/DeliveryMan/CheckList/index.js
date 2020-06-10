@@ -8,16 +8,17 @@ import logoImg from '../../../assets/logo.png';
 
 
 export default function CheckList() {
-  const[model, setModel] = useState('');
-  const[color, setColor] = useState('');
-  const[amount, setAmount] = useState('');
-  const[period, setPeriod] = useState('');
+  
+  const route = useRoute();
+  const delivery = route.params.delivery;
+  const[model, setModel] = useState(delivery.checklist.model);
+  const[color, setColor] = useState(delivery.checklist.color);
+  const[amount, setAmount] = useState(delivery.checklist.amount);
+  const[period, setPeriod] = useState(delivery.checklist.period);
 
 
 
   const navigation = useNavigation();
-
- 
 
 
   function navigateBack() {
@@ -78,7 +79,7 @@ export default function CheckList() {
                 onChangeText={setAmount}
 
               />
-               <Text style={styles.incidentProperty}>Data de retirada?</Text>
+               <Text style={styles.incidentProperty}>Data de entrega?</Text>
         <TextInput
                 style={styles.input}
                 placeholder="00/00/0000"
