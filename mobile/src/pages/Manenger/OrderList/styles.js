@@ -33,16 +33,26 @@ export default StyleSheet.create({
    lineHeight: 24,
    color: '#737380' 
  },
+ description:{
+  fontWeight: 'bold',
 
+  fontSize: 18,
+  marginTop: 18,
+  color: '#000' 
+},
 
  orderList: {
   marginTop: 32,
+  marginBottom: 10
+  
 },
 order: {
   padding: 24,
   borderRadius: 8,
   backgroundColor: '#fff',
-  marginBottom: 16,
+  marginBottom: 10,
+  marginRight:16,
+  width: 300
  
 },
 orderProperty: {

@@ -68,6 +68,7 @@ detailsButtonText: {
   color: '#29C759',
   fontSize: 15,
   fontWeight: 'bold'
-}
+},
+
 
 });

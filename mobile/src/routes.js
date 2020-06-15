@@ -17,7 +17,7 @@ import DetailRequest from './pages/DeliveryMan/DetailRequest';
 import DeliveryList from './pages/DeliveryMan/DeliveryList';
 import DetailDelivery from './pages/DeliveryMan/DetailDelivery';
 import CheckList from './pages/DeliveryMan/CheckList';
-import Notification from './pages/DeliveryMan/Notification';
+//import Notification from './pages/DeliveryMan/Notification';
 
 //Paginas para o gestor
 import SolicitationList from './pages/Manenger/SolicitationList';
@@ -25,16 +25,17 @@ import DetailSolicitation from './pages/Manenger/DetailSolicitation';
 import UsersList from './pages/Manenger/UsersList';
 import OrderList from './pages/Manenger/OrderList';
 import DetailOrder from './pages/Manenger/DetailOrder';
+import DetailOrderFinalized from './pages/Manenger/DetailOderFinalized';
 
 
 
 export default function Routes() {
-  const HomeStackScreen = () => (
+  const DeliveryTabsScreen = () => (
     <Tab.Navigator 
     
     initialRouteName="Home"
       activeColor="#36CA63"
-      inactiveColor="#fff"
+      inactiveColor="#C0C0C0"
       shifting={true}
       barStyle={{ backgroundColor: '#293B83',  paddingBottom: 12 }}
       >
@@ -55,23 +56,23 @@ export default function Routes() {
           ),
         }}
       />
-       <Tab.Screen name="Notifications" component={Notification}
+       {/* <Tab.Screen name="Notifications" component={Notification}
         options={{
           tabBarLabel: 'Notificações',
           tabBarIcon: ({ color }) => (
             <FontAwesome name="bell" color={color} size={26} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 
-  const ManengerHomeStackScreen = () => (
+  const ManengerTabsScreen = () => (
     <Tab.Navigator 
     
     initialRouteName="SolicitationList"
       activeColor="#36CA63"
-      inactiveColor="#fff"
+      inactiveColor="#C0C0C0"
       shifting={true}
       barStyle={{ backgroundColor: '#293B83',  paddingBottom: 12 }}
       >
@@ -106,8 +107,8 @@ export default function Routes() {
     <NavigationContainer>
       <HomeStack.Navigator screenOptions={{ headerShown: false }}>
         <HomeStack.Screen name="SignIn" component={SignIn} />
-        <HomeStack.Screen name="TabsDeliveryMan" component={HomeStackScreen} />
-        <HomeStack.Screen name="TabsManager" component={ManengerHomeStackScreen} />
+        <HomeStack.Screen name="TabsDeliveryMan" component={DeliveryTabsScreen} />
+        <HomeStack.Screen name="TabsManager" component={ManengerTabsScreen} />
 
         
         <HomeStack.Screen name="CheckList" component={CheckList} />
@@ -116,6 +117,7 @@ export default function Routes() {
         <HomeStack.Screen name="DetailSolicitation" component={DetailSolicitation} />
         <HomeStack.Screen name="DetailDelivery" component={DetailDelivery} />
         <HomeStack.Screen name="DetailOrder" component={DetailOrder} />
+        <HomeStack.Screen name="DetailOrderFinalized" component={DetailOrderFinalized} />
 
       </HomeStack.Navigator>
     </NavigationContainer>

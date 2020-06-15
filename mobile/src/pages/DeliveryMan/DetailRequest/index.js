@@ -1,24 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View, TouchableOpacity, Image, Text, Alert } from 'react-native';
+import { View, TouchableOpacity, Image, Text, Alert, AsyncStorage } from 'react-native';
 
 import styles from './styles';
 import logoImg from '../../../assets/logo.png';
 
+import api from '../../../services/api';
 
 export default function DetailRequest() {
   const navigation = useNavigation();
   const route = useRoute();
- 
+
   const delivery = route.params.delivery;
+
+  const[userid, setUserid] = useState();
+
+  const[endereco, setEndereco] = useState(delivery.endereco);
+  const[produto, setProduto] = useState(delivery.produto);
+  const[periodo, setPeriodo] = useState(delivery.periodo);
+  const[order_id, setOrder_id] = useState(delivery.id);
+
+  const dados = {
+    endereco,
+    produto,
+    periodo,
+    order_id
+    
+  };
+ 
+ async function LoadId(){
+  const userid = await AsyncStorage.getItem('UserId');
+      setUserid(userid);
+      return;
+ }
+
+ useEffect(() => {
+  LoadId();
+}, []);
 
   function navigateBack() {
     navigation.goBack()
   }
-  function HandleSolicitation(){
-    navigation.navigate('Home');
-    Alert.alert('Solicitação realizada com sucesso');
+
+ async function HandleSolicitation(){
+
+    
+      try {
+         await api.post('solicitations', dados, {
+          headers: {
+            Authorization: userid,
+          }
+        })
+        Alert.alert('Solicitação realizada com sucesso');
+        navigation.navigate('Home');
+
+      } catch (err) {
+        Alert.alert('Erro na solicitação, tente novamente');
+      }
   }
 
   return (

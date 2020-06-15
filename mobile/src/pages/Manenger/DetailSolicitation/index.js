@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, Alert } from 'react-native';
@@ -6,23 +6,61 @@ import { View, TouchableOpacity, Image, Text, Alert } from 'react-native';
 import styles from './styles';
 import logoImg from '../../../assets/logo.png';
 
+import api from '../../../services/api';
 
 export default function DatailSolicitation() {
   const navigation = useNavigation();
   const route = useRoute();
- 
-  const delivery = route.params.delivery;
+  const delivery = route.params.solicitation;
+
+  const[endereco, setEndereco] = useState(delivery.endereco);
+  const[produto, setProduto] = useState(delivery.produto);
+  const[periodo, setPeriodo] = useState(delivery.periodo);
+
+  const dados = {
+    endereco,
+    produto,
+    periodo
+    
+  };
+
+
 
   function navigateBack() {
     navigation.goBack()
   }
-  function HandleNegation(){
-    navigation.navigate('SolicitationList');
-    Alert.alert('Solicitação negada com sucesso');
+   async function HandleNegation(id){
+
+    try {
+     
+      await api.delete(`solicitations/${id}`)
+     Alert.alert('Solicitação negada com sucesso');
+     
+     navigation.navigate('SolicitationList');
+
+   } catch (err) {
+     Alert.alert('Erro no processo, tente novamente');
+   }
+
+
   }
-  function HandleConfirmation(){
-    navigation.navigate('SolicitationList');
-    Alert.alert('Solicitação confirmada com sucesso');
+  async function HandleConfirmation(entregador_id, id, order_id){
+
+    try {
+      await api.post('solicitationsConfirmed', dados, {
+       headers: {
+         Authorization: entregador_id,
+       }
+     });
+     await api.delete(`solicitations/${id}`);
+     await api.delete(`requests/${order_id}`);
+     
+     Alert.alert('Solicitação confirmada com sucesso');
+     navigation.navigate('SolicitationList');
+
+   } catch (err) {
+     Alert.alert('Erro no processo tente novamente');
+   }
   }
 
   return (
@@ -40,7 +78,7 @@ export default function DatailSolicitation() {
         <Text style={styles.incidentValue}>{delivery.endereco}</Text>
 
         <Text style={styles.incidentProperty}>Entregador:</Text>
-        <Text style={styles.incidentValue}>{delivery.deliveryman}</Text>
+        <Text style={styles.incidentValue}>{delivery.name}</Text>
 
         <Text style={styles.incidentProperty}>Produto:</Text>
         <Text style={styles.incidentValue}>{delivery.produto}</Text>
@@ -54,10 +92,10 @@ export default function DatailSolicitation() {
 
 
         <View style={styles.actions}>
-          <TouchableOpacity style={styles.actionNegar} onPress={() =>HandleNegation()}>
+          <TouchableOpacity style={styles.actionNegar} onPress={() =>HandleNegation(delivery.id)}>
             <Text style={styles.actionText}>Negar</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.action} onPress={() =>HandleConfirmation()}>
+          <TouchableOpacity style={styles.action} onPress={() =>HandleConfirmation(delivery.user_id, delivery.id, delivery.order_id)}>
             <Text style={styles.actionText}>Confirmar</Text>
           </TouchableOpacity>
         </View>

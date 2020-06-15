@@ -24,14 +24,6 @@ export default function DetailDelivery() {
     navigation.navigate('CheckList', { delivery });
   }
 
- 
-  function handlefinalizar(){
-    Alert.alert('Entrega finalizada com sucesso');
-    navigation.navigate('Home');
-
-  }
-
-
    
   return (
     <View style={styles.container} >
@@ -59,23 +51,12 @@ export default function DetailDelivery() {
       </View>
 
       <View style={styles.contactBox}>
-        <Text style={styles.heroTitle}>Faça o check-List da carga</Text>
-
+        <Text style={styles.heroTitle}>Finalizar entrega</Text>
+        <Text style={styles.heroDescription}>Para finalizar preencha o check List</Text>
 
         <View style={styles.actions}>
           <TouchableOpacity style={styles.action} onPress={() => handleCheckList(delivery)}>
-            <Text style={styles.actionText}>Fazer Check-List</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <View style={styles.contactBox}>
-        <Text style={styles.heroTitle}>Finalizar entrega</Text>
-        <Text style={styles.heroDescription}>Antes de finalizar faça o CheckList da carga</Text>
-
-        <View style={styles.actions}>
-          <TouchableOpacity style={styles.action} onPress={() => handlefinalizar()}>
-            <Text style={styles.actionText}>Finalizar</Text>
+            <Text style={styles.actionText}>Preencher</Text>
           </TouchableOpacity>
         </View>
       </View>

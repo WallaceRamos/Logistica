@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, FlatList } from 'react-native';
@@ -9,25 +9,34 @@ import logoImg from '../../../assets/logo.png';
 
 export default function Notification() {
   const navigation = useNavigation();
- 
+  const[xtotal, setXtotal] = useState(3);
   const DATA = [
     {
       id: '1',
       endereco: 'Av. Prof. João Rodrigues, 1501 - Jardim Esperanca, Guaratinguetá - SP',
       produto: ' Estojo infantil / 00W23R',
       periodo: '22/8/2020',
-      status: '01'
-
+      status: 'confirmado'
     },
     {
       id: '2',
       endereco: 'Av. Prof. João Rodrigues, 1501 - Jardim Esperanca, Guaratinguetá - SP',
       produto: ' Estojo infantil / 00W23R',
       periodo: '22/8/2020',
-      status: '02'
+      status: 'negado'
+    },
+    {
+      id: '3',
+      endereco: 'Av. Prof. João Rodrigues, 1501 - Jardim Esperanca, Guaratinguetá - SP',
+      produto: ' Estojo infantil / 00W23R',
+      periodo: '22/8/2020',
+      status: null
+
     },
    
   ];
+  
+
 function navigateToDetail(){
   navigation.navigate('Home');
 }
@@ -36,7 +45,7 @@ function navigateToDetail(){
       <View style={styles.header}>
         <Image source={logoImg} style={styles.headerLogo}/>
         <Text style={styles.headerText}>
-          Total de <Text style={styles.headerTextBold}>2 notificações.</Text>
+          Total de <Text style={styles.headerTextBold}>{xtotal} notificações.</Text>
         </Text>
       </View>
 
@@ -46,7 +55,7 @@ function navigateToDetail(){
         keyExtractor={notification => String(notification.id)}
         renderItem={({ item: notification }) => (
           <View style={styles.notification}>
-            <Text style={styles.notificationProperty}>Solicitação de retirada de produto foi: {notification.status == '01' ?  'COMFIRMADA' : 'NEGADA'}</Text>
+            <Text style={styles.notificationProperty}>Solicitação de retirada de produto está: {notification.status == null ? 'Aguardando resposta' : notification.status }</Text>
 
             <Text style={styles.notificationValue}>Produto {notification.produto}</Text>
 
