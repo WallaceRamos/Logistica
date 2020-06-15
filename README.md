@@ -1,4 +1,4 @@
-# 🚚 Aplicativo de Logistica
+# 🚚  Aplicativo de Logistica
 
 
 
@@ -9,11 +9,11 @@ Este projeto foi iniciado com o aplicativo Expo  que é uma estrutura e uma plat
 
 > Acesse  [Expo](https://docs.expo.io/) para saber mais.
 
-## 🤔 O que é?
+## 🤔  O que é?
 
 Um aplicativo onde entregadores cadastrados podem solicitar retiradas de produtos para o gestor, que pode confirmar ou negar a solicitação. Quando o entregador entregar o produto ele pode preencher um check-list da carga e finalizar a entrega do produto.
 
-## 👨‍💻 Instalação
+## 👨‍💻  Instalação
   
 Para instalar as dependências e executar o **Backend** (modo desenvolvimento), clone o projeto em seu computador e em seguida execute:
 ```bash
@@ -29,9 +29,9 @@ yarn start
 ```
 
 
-## ☕ Scripts disponiveis
+## ☕  Scripts disponiveis
 
-No diretório do projeto, você pode executar:
+No diretório do projeto **Mobile** , você pode executar:
 
 ```bash
 yarn start
