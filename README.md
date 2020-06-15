@@ -14,17 +14,18 @@ Este projeto foi iniciado com o aplicativo Expo  que é uma estrutura e uma plat
 Um aplicativo onde entregadores cadastrados podem solicitar retiradas de produtos para o gestor, que pode confirmar ou negar a solicitação. Quando o entregador entregar o produto ele pode preencher um check-list da carga e finalizar a entrega do produto.
 
 ## 👨‍💻 Instalação
-<!-- Configure o MongoDB e atualize a string de conexão com seu `User:Senha` no arquivo `index.js`.  
-Para instalar as dependências e executar o **Servidor** (modo desenvolvimento), clone o projeto em seu computador e em seguida execute:
+  
+Para instalar as dependências e executar o **Backend** (modo desenvolvimento), clone o projeto em seu computador e em seguida execute:
 ```bash
 cd backend
 yarn install
-yarn dev
-``` -->
-Para iniciar o **Mobile** do React-Native utilize os comandos:
+yarn start
+```
+Para instalar as dependências e executar o **Mobile** (modo desenvolvimento) do React-Native, clone o projeto em seu computador e em seguida execute:
 ```bash
 cd mobile
 yarn install
+yarn start
 ```
 
 
