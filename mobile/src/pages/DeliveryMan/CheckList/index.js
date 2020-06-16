@@ -15,10 +15,10 @@ export default function CheckList() {
 
   const[userid, setUserid] = useState();
 
-  const [modelo, setModelo] = useState('00W23R');
-  const [cor, setCor] = useState('Azul');
-  const [quantidade, setQuantidade] = useState('1');
-  const [tempo, setTempo] = useState('21/07/2020');
+  const [modelo, setModelo] = useState('');
+  const [cor, setCor] = useState('');
+  const [quantidade, setQuantidade] = useState('');
+  const [tempo, setTempo] = useState('');
   const [endereco, setEndereco] = useState(delivery.endereco);
   const [produto, setProduto] = useState(delivery.produto);
   const [periodo, setPeriodo] = useState(delivery.periodo);
@@ -90,8 +90,7 @@ export default function CheckList() {
             style={styles.input}
             placeholder="Modelo"
             placeholderTextColor="#999"
-            autoCapitalize="characters"
-            dataDetectorTypes="none"
+            autoCapitalize="none"
             autoCorrect={false}
             value={modelo}
             onChangeText={setModelo}
@@ -102,8 +101,8 @@ export default function CheckList() {
             style={styles.input}
             placeholder="Cor"
             placeholderTextColor="#999"
-            dataDetectorTypes="none"
-            autoCapitalize="words"
+            autoCapitalize="none"
+            autoCorrect={false}
             value={cor}
             onChangeText={setCor}
 
@@ -113,7 +112,6 @@ export default function CheckList() {
             style={styles.input}
             placeholder="1x"
             placeholderTextColor="#999"
-            keyboardType="number-pad"
             autoCapitalize="none"
             autoCorrect={false}
             value={quantidade}
@@ -121,15 +119,15 @@ export default function CheckList() {
 
           />
           <Text style={styles.incidentProperty}>Data de entrega?</Text>
-          <TextInput
+         
+           <TextInput
             style={styles.input}
             placeholder="00/00/0000"
             placeholderTextColor="#999"
-            keyboardType="phone-pad"
             autoCapitalize="none"
             autoCorrect={false}
             value={tempo}
-            onChange={setTempo}
+            onChangeText={setTempo}
           />
 
 
