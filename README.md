@@ -2,7 +2,7 @@
 
 
 
-![web-mobile](https://raw.githubusercontent.com/WallaceRamos/wallaceramos.github.io/master/img/logistica.png)
+![web-mobile](https://repository-images.githubusercontent.com/266159996/a4ef6580-bfc0-11ea-977a-08bab50129bd)
 
 
 Este projeto foi iniciado com o aplicativo Expo  que é uma estrutura e uma plataforma para aplicações universais do React. É um conjunto de ferramentas e serviços criados em torno do React Native e plataformas nativas que ajudam a desenvolver, criar, implantar e iterar rapidamente em iOS, Android e aplicativos da Web a partir da mesma base de código JavaScript / TypeScript. .
