@@ -39,8 +39,8 @@ export default function DetailOrder() {
           <Text style={styles.incidentProperty}>Produto:</Text>
           <Text style={styles.incidentValue}>{order.produto}</Text>
 
-          <Text style={styles.incidentProperty}>Data limite para entrega:</Text>
-          <Text style={styles.incidentValue}>{order.periodo}</Text>
+          <Text style={styles.incidentProperty}>Quantidade de Produto:</Text>
+          <Text style={styles.incidentValue}>{order.quantidade}</Text>
 
         </View>
 

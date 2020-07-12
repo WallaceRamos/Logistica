@@ -22,7 +22,6 @@ import CheckList from './pages/DeliveryMan/CheckList';
 //Paginas para o gestor
 import SolicitationList from './pages/Manenger/SolicitationList';
 import DetailSolicitation from './pages/Manenger/DetailSolicitation';
-import CreateRequest from './pages/Manenger/CreateRequest';
 import UsersList from './pages/Manenger/UsersList';
 import OrderList from './pages/Manenger/OrderList';
 import DetailOrder from './pages/Manenger/DetailOrder';
@@ -75,14 +74,6 @@ export default function Routes() {
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
             <FontAwesome name="home" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen name="CreateRequest" component={CreateRequest}
-        options={{
-          tabBarLabel: 'Novo pedido',
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="plus" color={color} size={26} />
           ),
         }}
       />

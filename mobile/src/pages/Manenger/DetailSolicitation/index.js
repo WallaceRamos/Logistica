@@ -15,12 +15,12 @@ export default function DatailSolicitation() {
 
   const[endereco, setEndereco] = useState(delivery.endereco);
   const[produto, setProduto] = useState(delivery.produto);
-  const[periodo, setPeriodo] = useState(delivery.periodo);
+  const[quantidade, setQuantidade] = useState(delivery.quantidade);
 
   const dados = {
     endereco,
     produto,
-    periodo
+    quantidade
     
   };
 
@@ -83,8 +83,8 @@ export default function DatailSolicitation() {
         <Text style={styles.incidentProperty}>Produto:</Text>
         <Text style={styles.incidentValue}>{delivery.produto}</Text>
 
-        <Text style={styles.incidentProperty}>Data limite de entrega:</Text>
-  <Text style={styles.incidentValue}>{delivery.periodo}</Text>
+        <Text style={styles.incidentProperty}>Quantidade de Produto:</Text>
+  <Text style={styles.incidentValue}>{delivery.quantidade}</Text>
       </View>
 
       <View style={styles.contactBox}>

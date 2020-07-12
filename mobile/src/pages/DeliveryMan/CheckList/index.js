@@ -17,11 +17,11 @@ export default function CheckList() {
 
   const [modelo, setModelo] = useState('');
   const [cor, setCor] = useState('');
-  const [quantidade, setQuantidade] = useState('');
+
   const [tempo, setTempo] = useState('');
   const [endereco, setEndereco] = useState(delivery.endereco);
   const [produto, setProduto] = useState(delivery.produto);
-  const [periodo, setPeriodo] = useState(delivery.periodo);
+  const [quantidade, setQuantidade] = useState(delivery.quantidade);
   const [solicitationId, setSolicitationId] = useState(delivery.id);
 
 
@@ -49,11 +49,10 @@ export default function CheckList() {
       await api.post('delivery', {
         modelo,
         cor,
-        quantidade,
         tempo,
         endereco,
         produto,
-        periodo
+        quantidade
     
       }, {
         headers: {
@@ -107,17 +106,7 @@ export default function CheckList() {
             onChangeText={setCor}
 
           />
-          <Text style={styles.incidentProperty}>Quantidade?</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="1x"
-            placeholderTextColor="#999"
-            autoCapitalize="none"
-            autoCorrect={false}
-            value={quantidade}
-            onChangeText={setQuantidade}
-
-          />
+         
           <Text style={styles.incidentProperty}>Data de entrega?</Text>
          
            <TextInput

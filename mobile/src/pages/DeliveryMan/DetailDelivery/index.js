@@ -46,8 +46,8 @@ export default function DetailDelivery() {
         <Text style={styles.incidentProperty}>Produto:</Text>
         <Text style={styles.incidentValue}>{delivery.produto}</Text>
 
-        <Text style={styles.incidentProperty}>Data limite de entrega:</Text>
-        <Text style={styles.incidentValue}>{delivery.periodo}</Text>
+        <Text style={styles.incidentProperty}>Quantidade de produto:</Text>
+        <Text style={styles.incidentValue}>{delivery.quantidade}</Text>
       </View>
 
       <View style={styles.contactBox}>
