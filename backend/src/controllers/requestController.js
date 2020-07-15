@@ -19,13 +19,13 @@ module.exports = {
   },
 
   async create(request, response) {
-    const { endereco, produto, periodo  } = request.body;
+    const { endereco, produto, quantidade  } = request.body;
 
 
     const [id] = await connection('requests').insert({
       endereco,
       produto,
-      periodo, 
+      quantidade, 
       
     });
     

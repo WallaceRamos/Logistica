@@ -21,13 +21,13 @@ module.exports = {
   },
 
   async create(request, response) {
-    const { endereco, produto, periodo, order_id  } = request.body;
+    const { endereco, produto, quantidade, order_id  } = request.body;
     const user_id = request.headers.authorization;
 
     const [id] = await connection('solicitations').insert({
       endereco,
       produto,
-      periodo, 
+      quantidade, 
       order_id,
       user_id
     });

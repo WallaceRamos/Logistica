@@ -5,7 +5,7 @@ exports.up = function(knex) {
 
     table.string('endereco').notNullable();
     table.string('produto').notNullable();
-    table.string('periodo').notNullable();
+    table.string('quantidade').notNullable();
     
   });
 };

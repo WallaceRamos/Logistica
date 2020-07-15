@@ -21,16 +21,15 @@ module.exports = {
   },
 
   async create(request, response) {
-    const { endereco, produto, periodo, modelo, cor, quantidade, tempo  } = request.body;
+    const { endereco, produto, modelo, cor, quantidade, tempo  } = request.body;
     const user_id = request.headers.authorization;
 
     const [id] = await connection('delivery').insert({
       endereco,
       produto,
-      periodo, 
+      quantidade, 
       modelo, 
       cor, 
-      quantidade, 
       tempo, 
       user_id
     });

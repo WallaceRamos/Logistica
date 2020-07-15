@@ -39,13 +39,13 @@ module.exports = {
   },
 
   async create(request, response) {
-    const { endereco, produto, periodo  } = request.body;
+    const { endereco, produto, quantidade  } = request.body;
     const user_id = request.headers.authorization;
 
     const [id] = await connection('solicitationsConfirmed').insert({
       endereco,
       produto,
-      periodo, 
+      quantidade, 
       user_id
     });
     

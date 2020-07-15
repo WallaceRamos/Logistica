@@ -41,7 +41,7 @@ routes.post('/solicitations', celebrate({
   [Segments.BODY]: Joi.object().keys({
     endereco: Joi.string().required(),
     produto: Joi.string().required(),
-    periodo: Joi.string().required(),
+    quantidade: Joi.string().required(),
     order_id: Joi.number().required(),
   })
 }), SolicitationController.create);
@@ -66,7 +66,7 @@ routes.post('/solicitationsConfirmed', celebrate({
   [Segments.BODY]: Joi.object().keys({
     endereco: Joi.string().required(),
     produto: Joi.string().required(),
-    periodo: Joi.string().required(),
+    quantidade: Joi.string().required(),
   })
 }), SolicitationConfirmedController.create);
 
@@ -87,10 +87,9 @@ routes.post('/delivery', celebrate({
   [Segments.BODY]: Joi.object().keys({
     endereco: Joi.string().required(),
     produto: Joi.string().required(),
-    periodo: Joi.string().required(),
+    quantidade: Joi.string().required(),
     modelo: Joi.string().required(),
     cor: Joi.string().required(),
-    quantidade: Joi.string().required(),
     tempo: Joi.string().required(),
   })
 }), DeliveryController.create);
@@ -106,7 +105,7 @@ routes.post('/requests', celebrate({
   [Segments.BODY]: Joi.object().keys({
     endereco: Joi.string().required(),
     produto: Joi.string().required(),
-    periodo: Joi.string().required().min(10).max(10),
+    quantidade: Joi.string().required().min(10).max(10),
   })
 }), RequestController.create);
 routes.delete('/requests/:id', celebrate({
