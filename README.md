@@ -48,6 +48,10 @@ Compila o aplicativo para ser implantado nas lojas de aplicativos ou para Androi
 > Acesse  [Expo/Criando aplicativos independentes](https://docs.expo.io/distribution/building-standalone-apps/) para saber mais.
 
 
+## 📱 Login na aplicação
+
+Apos executar o **Backend** e o **Mobile** da aplicação ultilize o ID acesso b5f1b94b para logar na aplicação como entregador ou ultilize o ID de acesso a5962362 para logar como gestor.  
+
 ## 📝 Licença
 
 Distribuído sob a licença MIT. Consulte [LICENSE](LICENSE) para obter mais informações.
