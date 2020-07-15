@@ -105,7 +105,7 @@ routes.post('/requests', celebrate({
   [Segments.BODY]: Joi.object().keys({
     endereco: Joi.string().required(),
     produto: Joi.string().required(),
-    quantidade: Joi.string().required().min(10).max(10),
+    quantidade: Joi.string().required(),
   })
 }), RequestController.create);
 routes.delete('/requests/:id', celebrate({
