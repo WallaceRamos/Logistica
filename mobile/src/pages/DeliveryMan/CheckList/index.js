@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, TouchableOpacity, Image, Text, Alert, TextInput, AsyncStorage, ScrollView } from 'react-native';
+import { mask } from 'remask';
+
 
 import styles from './styles';
 import logoImg from '../../../assets/logo.png';
@@ -115,7 +117,7 @@ export default function CheckList() {
             placeholderTextColor="#999"
             autoCapitalize="none"
             autoCorrect={false}
-            value={tempo}
+            value={mask(tempo, ['99/99/9999'])}
             onChangeText={setTempo}
           />
 
