@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Alert, KeyboardAvoidingView, AsyncStorage, TouchableOpacity, TextInput, Text, Image, View, ScrollView } from 'react-native';
+import { Alert, KeyboardAvoidingView, TouchableOpacity, TextInput, Text, Image, View, ScrollView } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
 import api from '../../services/api';
@@ -16,7 +17,8 @@ export default function Login() {
   async function handleSubmit() {
     try {
       const response = await api.post('session', { matricula });
-      const { funcao, name, id} = response.data;     
+      const { funcao, name, id} = response.data;  
+       
       AsyncStorage.setItem('userName', name);
       AsyncStorage.setItem('UserId', id);
       AsyncStorage.setItem('UserFuncao', funcao);

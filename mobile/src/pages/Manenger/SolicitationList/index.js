@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View, TouchableOpacity, Image, Text, FlatList, AsyncStorage } from 'react-native';
+import { View, TouchableOpacity, Image, Text, FlatList } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import styles from './styles';
 import logoImg from '../../../assets/logo.png';
