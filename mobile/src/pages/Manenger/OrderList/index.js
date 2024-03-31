@@ -34,7 +34,7 @@ export default function OrderList() {
     return;
   }
   async function loadSolicitations(pageSolicitationNumber = pageSolicitation, shouldRefreshSolicitation = false) {
-
+    setLoadingSolicitation(true);
     if (loadingSolicitation) {
       return;
     }
@@ -42,7 +42,7 @@ export default function OrderList() {
       return;
     }
 
-    setLoadingSolicitation(true);
+    
 
     const response = await api.get(`solicitationsConfirmed?page=${pageSolicitationNumber}`);
 
@@ -81,7 +81,7 @@ export default function OrderList() {
 
 
     await loadSolicitations(1, true);
-    await loadDelivery(1, true);
+  
 
 
     setRefreshing(false);
@@ -131,9 +131,10 @@ export default function OrderList() {
           style={styles.orderList}
           keyExtractor={order => String(order.id)}
           onEndReached={() => loadSolicitations()}
-          onEndReachedThreshold={0.2}
-          horizontal={true}
+          onEndReachedThreshold={0.1}
+          horizontal
           showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item: order }) => (
             <View style={styles.order}>
               <Text style={styles.orderProperty}>Endereço da entrega:</Text>
@@ -163,6 +164,7 @@ export default function OrderList() {
           style={styles.orderList}
           horizontal={true}
           showsVerticalScrollIndicator={false}
+  showsHorizontalScrollIndicator={false}
           keyExtractor={order => String(order.id)}
           onEndReached={() => loadDelivery()}
           onEndReachedThreshold={0.2}

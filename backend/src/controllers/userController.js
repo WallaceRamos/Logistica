@@ -38,6 +38,20 @@ module.exports = {
 
     return response.json({ id, funcao });
   },
+  async delete(request, response) {
+    const { id } = request.params;
 
+    // const user = await connection('users')
+    //   .where('id', id)
+    //   .select('user_id')
+    //   .first();
+
+    // if(users.adm_id != adm_id){
+    //   return response.status(401).json({ error: 'Operação não permitida.'});
+    // }
+    await connection('users').where('id', id).delete();
+    return response.status(204).send();
+
+  }
 
 };

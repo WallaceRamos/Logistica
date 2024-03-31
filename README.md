@@ -38,6 +38,14 @@ yarn start
 ```
 Executa o aplicativo no modo de desenvolvimento.
 Após o carregamento abrira uma pagina com um QR code, escaneie o QR code com o aplicativo da EXPO e o aplicativo será carregado.
+
+
+## 🛜 Comunicação do backend com o mobile
+
+
+Abaixo do QR code é gerado um endereço IP ex: exp://191.162.1.13:8081, copie e cole no diretorio api.js que se encontra em: 'mobile/src/services/api.js' substituindo o final por :3333 ex: http://191.162.1.13:3333 ,para realizar comunicação do backend com o mobile na mesma rede.
+
+
 > Acesse  [Expo/Modo de Desenvolvimento e Produção](https://docs.expo.io/workflow/development-mode/) para saber mais.
 
 ```bash
@@ -50,7 +58,7 @@ Compila o aplicativo para ser implantado nas lojas de aplicativos ou para Androi
 
 ## 📱 Login na aplicação
 
-Apos executar o **Backend** e o **Mobile** da aplicação ultilize o ID acesso **b5f1b94b** para logar na aplicação como entregador ou ultilize o ID de acesso **a5962362** para logar como gestor.  
+Apos executar o **Backend** e o **Mobile** da aplicação ultilize o ID acesso **24ac4c88** para logar na aplicação como entregador ou ultilize o ID de acesso **a5962362** para logar como gestor.  
 
 ## 📝 Licença
 

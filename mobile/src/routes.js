@@ -22,6 +22,8 @@ import CheckList from './pages/DeliveryMan/CheckList';
 //Paginas para o gestor
 import SolicitationList from './pages/Manenger/SolicitationList';
 import CreateRequest from './pages/Manenger/CreateRequest';
+import CreateUser from './pages/Manenger/CreateUsers';
+
 import DetailSolicitation from './pages/Manenger/DetailSolicitation';
 import UsersList from './pages/Manenger/UsersList';
 import OrderList from './pages/Manenger/OrderList';
@@ -109,6 +111,7 @@ export default function Routes() {
     <NavigationContainer>
       <HomeStack.Navigator screenOptions={{ headerShown: false }}>
         <HomeStack.Screen name="SignIn" component={SignIn} />
+        <HomeStack.Screen name="CreateUser" component={CreateUser} />
         <HomeStack.Screen name="TabsDeliveryMan" component={DeliveryTabsScreen} />
         <HomeStack.Screen name="TabsManager" component={ManengerTabsScreen} />
 

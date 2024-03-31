@@ -55,6 +55,23 @@ userValue: {
   marginBottom: 24,
   color: '#737380',
 },
-
+actions: {
+  marginTop: 16,
+  alignItems:'center',
+  justifyContent: 'center',
+},
+action: {
+  backgroundColor: '#293B83',
+  borderRadius: 8,
+  height: 50,
+  width: '48%',
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+actionText:{
+  color: '#FFF',
+  fontSize: 15,
+  fontWeight: 'bold'
+},
 
 });

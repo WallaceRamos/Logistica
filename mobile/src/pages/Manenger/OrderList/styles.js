@@ -24,7 +24,10 @@ export default StyleSheet.create({
    color: '#000',
    fontWeight: 'bold'
  },
- 
+ Load: {
+  paddingRight: 15,
+  paddingTop: 75,
+},
  
  title: {
    fontSize: 16,

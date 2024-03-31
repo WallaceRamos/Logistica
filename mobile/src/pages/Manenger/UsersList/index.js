@@ -47,6 +47,10 @@ export default function UsersList() {
     setPage(pageNumber + 1);
     setLoading(false);
   }
+  function navigateToCreate() {
+    navigation.navigate('CreateUser');
+  }
+
 
   useEffect(() => {
     LoadNome();
@@ -77,9 +81,13 @@ export default function UsersList() {
         </View>
       </View>
 
-     
+      
       <Text style={styles.title}>Lista de entregadores cadastrados</Text>
-
+      <View style={styles.actions}>
+            <TouchableOpacity style={styles.action} onPress={() => navigateToCreate()}>
+              <Text style={styles.actionText}>Criar Usuario</Text>
+            </TouchableOpacity>
+          </View>
       <FlatList
       data={users}
       style={styles.userList}

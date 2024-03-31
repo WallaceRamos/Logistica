@@ -10,7 +10,7 @@ import styles from './styles';
 import logo from '../../assets/logo.png';
 
 export default function Login() {
-  const [matricula, setMatricula] = useState('');
+  const [matricula, setMatricula] = useState('a5962362');
 
   const navigation = useNavigation();
 
@@ -48,7 +48,7 @@ export default function Login() {
             style={styles.input}
             placeholder="Inserir ID"
             placeholderTextColor="#999"
-            secureTextEntry
+            //secureTextEntry
             autoCapitalize="none"
             autoCorrect={false}
             value={matricula}
