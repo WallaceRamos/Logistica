@@ -10,7 +10,7 @@ import styles from './styles';
 import logo from '../../assets/logo.png';
 
 export default function Login() {
-  const [matricula, setMatricula] = useState('a5962362');
+  const [matricula, setMatricula] = useState('');
 
   const navigation = useNavigation();
 
