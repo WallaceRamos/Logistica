@@ -30,7 +30,7 @@ yarn start
 ## 🛜 Comunicação do backend com o mobile
 
 
-Abaixo do QR code é gerado um endereço IP ex: exp://191.162.1.13:8081, copie e cole no diretorio api.js que se encontra em: 'mobile/src/services/api.js' substituindo o final por :3333 ex: http://191.162.1.13:3333 ,para realizar comunicação do backend com o mobile na mesma rede.
+Apos executar o diretorio monbile ira ser gerado no terminal um QR code. Abaixo do QR code é gerado um endereço IP ex: exp://191.162.1.13:8081, copie e cole no diretorio api.js que se encontra em: 'mobile/src/services/api.js' substituindo o final por :3333 ex: http://191.162.1.13:3333 ,para realizar comunicação do backend com o mobile na mesma rede.
 
 ## ☕  Scripts disponiveis
 
